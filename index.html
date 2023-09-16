@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Amici Peluqueria y Guarderia</title>
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css" type="text/css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500&family=Sacramento&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <header id="header" class="header">
+
+        <div>
+            <a href="index.html">
+                <h1>Amici</h1>
+            </a>
+            <a href="javascript:void(0);" class="icon" onclick="hamburgerMenu()">
+                <img src="images/hamburger.png" alt="">
+            </a>
+        </div>
+
+        <nav id="menuLinks">
+            <div>
+                <a href="index.html">
+                    <h1>Amici</h1>
+                </a>
+                <a href="javascript:void(0);" class="icon" onclick="hamburgerMenu()">
+                    <img src="images/cross.png" alt="">
+                </a>
+            </div>
+            <a href="index.html#servicios">SERVICIOS</a>
+            <a href="galeria.html">GALERÍA</a>
+            <a href="nosotros.html">SOBRE AMICI</a>
+            <a class="pink" href="https://wa.me/5493512033331" target="_blank">RESERVÁ TU LUGAR</a>
+        </nav>
+
+    </header>
+
+    <a class="whapp-button" aria-label="Chat on WhatsApp" href="https://wa.me/5493512033331" target="_blank"> <img
+            alt="Chat on WhatsApp" src="images/whapp-color.png" /></a>
+
+    <div class="hero-container">
+        <div class="hero">
+            <img class="overlap-logo" src="images/logo-color.png" alt="">
+            <div class="presentation">
+                <div class="presentation-content">
+                    <div class="hello">
+                        <p>Hola!</p>
+                        <p>Soy Lucre</p>
+                    </div>
+                    <p>Asistente veterinaria<br>matriculada</p>
+                    <p>Educadora canina<br>certificada</p>
+                    <p>Estilista canino y felino<br>profesional (Todas las razas<br class="bigScreenOnly">y tipos de
+                        mantos)</p>
+                    <a href="nosotros.html">Conocé más</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="servicios" class="section-container">
+        <div class="section-header">
+            <h2>SERVICIOS</h2>
+            <img src="images/servicios.png" alt="">
+        </div>
+        <h3>HIGIENE Y ESTETICA</h3>
+        <p> Peluquería canina y felina - General y de exposición<br>
+            Baños de higiene y belleza - Aptos receta médica<br>
+            Desanudados y deslanados<br>
+            Anexos<br>
+            Stripping<br>
+            Cortes de raza a tijera<br>
+            Arreglos y recuperación de mantos</p>
+        <h3>GUARDERIA</h3>
+        <p>Guardería canina VIP - todas las edades</p>
+        <h3>CLASES</h3>
+        <p>Dictado permanente de clases, talleres y perfeccionamiento en las distintas técnicas de trimming en<br>
+            peluquería canina y felina</p>
+        <a href="https://wa.me/5493512033331" target="_blank">Reservá tu lugar</a>
+    </div>
+
+    <hr>
+
+    <div class="section-container width-exception">
+        <div class="section-header">
+            <h2>GALERIA</h2>
+            <img src="images/galeria.png" alt="">
+        </div>
+        <img class="gallery-preview" src="images/67.jpg" alt="">
+        <img class="gallery-preview" src="images/54.jpg" alt="">
+        <img class="gallery-preview" src="images/14.jpg" alt="">
+        <img class="gallery-preview" src="images/39.jpg" alt="">
+        <img class="gallery-preview" src="images/65.jpg" alt="">
+        <a href="galeria.html">Ver más</a>
+    </div>
+
+    <hr>
+
+    <div class="section-container">
+        <div class="section-header">
+            <h2>OPINIONES</h2>
+            <img src="images/opiniones.png" alt="">
+        </div>
+        <!-- ////////reviews////////// -->
+        <section class="reviews-section doublemarvellous">
+            <div class="container">
+
+                <div id="reviews" class="columns"></div>
+                <!-- /////////we're hiding this map///////// -->
+                <div id="map"></div>
+                <script async defer
+                    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAw7wlXvdGlIc4_4YdoVp0UEy3t4qJS7BY&libraries=places&language=es&callback=initReviews">
+                    </script>
+                <script>
+                    //doublemarvellous get google reviews show stars
+                    function initReviews() {
+
+                        const stargetter = function (starso) {
+                            if (starso === 5) {
+                                return '<span>&#9733;</span>&nbsp;<span>&#9733;</span>&nbsp;<span>&#9733;</span>&nbsp;<span>&#9733;</span>&nbsp;<span>&#9733;</span>'
+                            } else if (starso === 4) {
+                                return '<span>&#9733;</span>&nbsp;<span>&#9733;</span>&nbsp;<span>&#9733;</span>&nbsp;<span>&#9733;</span>'
+                            } else if (starso === 3) {
+                                return '<span>&#9733;</span>&nbsp;<span>&#9733;</span>&nbsp;<span>&#9733;</span>'
+                            } else if (starso === 2) {
+                                return '<span>&#9733;</span>&nbsp;<span>&#9733;</span>'
+                            } else if (starso === 1) {
+                                return '&#9734'
+                            } else if (starso === 0) {
+                                return '&nbsp;'
+                            } else {
+                                return
+                            }
+                        };
+                        const reviewbox = document.getElementById('reviews');
+                        const map = new google.maps.Map(document.getElementById('map'), {
+                            center: { lat: -33.866, lng: 151.196 },
+                            zoom: 15
+                        });
+                        //
+                        const request = {
+                            placeId: 'ChIJU26nj76ZMpQRKSu7Qgt5yl8',
+                            fields: ['name', 'formatted_address', 'place_id', 'geometry', 'reviews']
+                        };
+                        //
+                        var service = new google.maps.places.PlacesService(map);
+                        //
+                        service.getDetails(request, function (place, status) {
+                            console.log(place.reviews);
+                            //
+                            let i;
+                            for (i = 0; i < place.reviews.length; i++) {
+                                reviewbox.innerHTML += '<div class="column is-one-third reviewcard"><div class="reviewtext matchy">' + place.reviews[i].text + '</div><div class="stars">' +
+                                    stargetter(place.reviews[i].rating)
+                                    + '</div><hr><div class="reviewauthor"><p class="authortitle">' + place.reviews[i].author_name + ' </p></div></div>';
+                            }
+                            reviewbox.innerHTML += '<div class="column is-one-third reviewcard"><a class="tag" target="_blank" href="https://search.google.com/local/writereview?placeid=ChIJU26nj76ZMpQRKSu7Qgt5yl8">COMPARTINOS<br>TU OPINIÓN</a></div>';
+                        });
+                    }
+                </script>
+
+            </div>
+        </section>
+        <!-- /////////end reviews///////// -->
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p class="footer-logo">Amici</p>
+            <hr>
+            <div class="socials-links">
+                <a href="https://www.instagram.com/amicicba/" target="_blank"><img src="images/instagram.png"
+                        alt=""></a>
+                <a href="https://wa.me/5493512033331" target="_blank"><img src="images/whapp.png" alt=""></a>
+                <a href="https://www.tiktok.com/@amicicba?lang=es" target="_blank"><img src="images/tiktok-logo.png"
+                        alt=""></a>
+            </div>
+            <p>Barrio San Salvador - Córdoba, Argentina</p>
+            <p>Horarios de atención: Lun a Vie de 9 a 17hs</p>
+            <p class="bold">Atención unicamente con turno programado</p>
+            <p>Teléfono: 351-2033331</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js" async defer></script>
+
+</body>
+
+</html>
