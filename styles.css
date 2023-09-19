@@ -490,11 +490,93 @@ header .icon {
     object-fit: contain;
 }
 
-.gallery-preview {
-    width: 90%;
-    max-height: 500px;
-    object-fit: cover;
+/*CSS For the gallery preview carousel*/
+
+section {
+    width: 100%;
 }
+
+.carousel {
+    margin: auto;
+    width: 100%;
+    height: 700px;
+    position: relative;
+  }
+  
+  .carousel > ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: 1000ms opacity ease-in-out;
+    transition-delay: 200ms;
+  }
+  
+  .slide > img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .slide[data-active] {
+    opacity: 1;
+    z-index: 1;
+    transition-delay: 0ms;
+  }
+  
+  .carousel-button {
+    height: 8%;
+    position: absolute;
+    z-index: 2;
+    background: none;
+    border: none;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, .5);
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, .1);
+  }
+
+  .carousel-button img {
+    height: 100%;
+  }
+
+  .prev {
+    transform: rotate(180deg);
+  }
+  
+  .carousel-button:hover,
+  .carousel-button:focus {
+    color: white;
+    background-color: rgba(0, 0, 0, .3);
+  }
+  
+  .carousel-button.prev {
+    left: 1rem;
+  }
+  
+  .carousel-button.next {
+    right: 1rem;
+  }
+
+/* ----------------------------- */
+
+
+@media (max-width:1367px) {
+    .carousel {
+        width: 90%;
+        height: 500px;
+      }
+}
+
 
 @media (max-width:1200px) {
 
@@ -506,10 +588,10 @@ header .icon {
         gap: 20px;
     }
 
-    .gallery-preview {
+    .carousel {
         width: 100%;
-        max-height: 450px;
-    }
+        height: 450px;
+      }
 }
 
 @media (max-width:650px) {
@@ -535,10 +617,14 @@ header .icon {
         height: 30px;
     }
 
-    .gallery-preview {
+    .carousel-button {
+        height: 10%;
+      }
+
+    .carousel {
         width: 100%;
-        max-height: 250px;
-    }
+        height: 250px;
+      }
 
     .section-container a {
         zoom: 0.6;
@@ -795,6 +881,40 @@ footer {
     width: 296px;
     object-fit: cover;
 }
+
+/*CSS for the modal images*/
+
+/* Add styles for the modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 25;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    max-width: 80%;
+    max-height: 80%;
+    margin: 0 auto;
+    display: block;
+}
+
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    font-size: 30px;
+    cursor: pointer;
+    color: white;
+}
+
+/*--------------------------*/
+
 
 @media (max-width:1150px) {
 

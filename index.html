@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="es">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Amici Peluqueria y Guarderia</title>
     <link rel="icon" type="image/x-icon" href="images/favicon.ico">
@@ -97,11 +97,35 @@
             <h2>GALERIA</h2>
             <img src="images/galeria.png" alt="">
         </div>
-        <img class="gallery-preview" src="images/67.jpg" alt="">
-        <img class="gallery-preview" src="images/54.jpg" alt="">
-        <img class="gallery-preview" src="images/14.jpg" alt="">
-        <img class="gallery-preview" src="images/39.jpg" alt="">
-        <img class="gallery-preview" src="images/65.jpg" alt="">
+
+        <!-- Carousel HTML for gallery preview -->
+
+        <section aria-label="Newest Photos">
+            <div class="carousel" data-carousel>
+                <button class="carousel-button prev" data-carousel-button="prev"><img src="images/next-button.png"
+                        alt=""></button>
+                <button class="carousel-button next" data-carousel-button="next"><img src="images/next-button.png"
+                        alt=""></button>
+                <ul data-slides>
+                    <li class="slide" data-active>
+                        <img src="images/gallery-preview1.jpg" alt="">
+                    </li>
+                    <li class="slide">
+                        <img src="images/gallery-preview2.jpg" alt="">
+                    </li>
+                    <li class="slide">
+                        <img src="images/gallery-preview3.jpg" alt="">
+                    </li>
+                    <li class="slide">
+                        <img src="images/gallery-preview4.jpg" alt="">
+                    </li>
+                    <li class="slide">
+                        <img src="images/gallery-preview5.jpg" alt="">
+                    </li>
+                </ul>
+            </div>
+        </section>
+
         <a href="galeria.html">Ver más</a>
     </div>
 
@@ -194,6 +218,43 @@
     </footer>
 
     <script src="scripts.js" async defer></script>
+    <script async defer>
+        // gallery preview function
+        const buttons = document.querySelectorAll("[data-carousel-button]")
+
+        function galleryPreview() {
+            const slides = document.querySelector("[data-slides]");
+            console.log(slides);
+
+            const activeSlide = slides.querySelector("[data-active]")
+            let newIndex = [...slides.children].indexOf(activeSlide) + 1
+            if (newIndex < 0) newIndex = slides.children.length - 1
+            if (newIndex >= slides.children.length) newIndex = 0
+
+            slides.children[newIndex].dataset.active = true
+            delete activeSlide.dataset.active
+        }
+
+        setInterval(galleryPreview, 3000);
+
+        buttons.forEach(button => {
+            button.addEventListener("click", () => {
+                const offset = button.dataset.carouselButton === "next" ? 1 : -1
+                const slides = button
+                    .closest("[data-carousel]")
+                    .querySelector("[data-slides]")
+
+                const activeSlide = slides.querySelector("[data-active]")
+                let newIndex = [...slides.children].indexOf(activeSlide) + offset
+                if (newIndex < 0) newIndex = slides.children.length - 1
+                if (newIndex >= slides.children.length) newIndex = 0
+
+                slides.children[newIndex].dataset.active = true
+                delete activeSlide.dataset.active
+            })
+        })
+
+    </script>
 
 </body>
 
