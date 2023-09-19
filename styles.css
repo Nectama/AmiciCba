@@ -43,7 +43,7 @@ body {
     /* Resize the background image to cover the entire container */
 }
 
-@media (max-width:1200px) {
+@media (max-width:745px) {
 
     body {
         background-image: url(images/home-background2.png);
@@ -51,7 +51,7 @@ body {
 
 }
 
-@media (max-width:650px) {
+@media (max-width:500px) {
 
     body {
         background-image: url(images/home-background3.png);
@@ -835,7 +835,7 @@ footer {
 }
 
 .gallery-container .section-header {
-    background-image: url(images/gallery-background.jpg);
+    background-image: url(images/gallery-background.png);
     background-position: center;
     background-position: center;
     /* Center the image */
@@ -843,15 +843,36 @@ footer {
     /* Do not repeat the image */
     background-size: cover;
     /* Resize the background image to cover the entire container */
+    height: 476px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .gallery-container h1 {
-    margin: 100px auto;
     font-family: 'Sacramento', cursive;
     font-size: 100px;
     color: #B35884;
     font-weight: 500;
     user-select: none;
+}
+
+@media (max-width:745px) {
+
+    .gallery-container .section-header {
+        background-image: url(images/gallery-background2.png);
+        height: 210px;
+    }
+
+}
+
+@media (max-width:500px) {
+
+    .gallery-container .section-header {
+        background-image: url(images/gallery-background3.png);
+        height: 93px;
+    }
+
 }
 
 .gallery-container {
