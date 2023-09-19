@@ -34,13 +34,29 @@ a {
 }
 
 body {
-    background-image: url(images/home-background.jpg);
+    background-image: url(images/home-background.png);
     background-position: center;
     /* Center the image */
     background-repeat: no-repeat;
     /* Do not repeat the image */
     background-size: cover;
     /* Resize the background image to cover the entire container */
+}
+
+@media (max-width:1200px) {
+
+    body {
+        background-image: url(images/home-background2.png);
+    }
+
+}
+
+@media (max-width:650px) {
+
+    body {
+        background-image: url(images/home-background3.png);
+    }
+
 }
 
 .whapp-button {
@@ -256,7 +272,7 @@ header .icon {
 }
 
 .overlap-logo {
-    height: 250px;
+    width: 15%;
     position: absolute;
     top: -125px;
     right: 6%;
@@ -341,7 +357,6 @@ header .icon {
     }
 
     .overlap-logo {
-        height: 180px;
         top: -90px;
         right: 6%;
     }
@@ -383,7 +398,6 @@ header .icon {
     }
 
     .overlap-logo {
-        height: 150px;
         top: -75px;
         right: 3%;
     }
@@ -430,7 +444,6 @@ header .icon {
     }
 
     .overlap-logo {
-        height: 75px;
         top: -38px;
         right: 3%;
     }
