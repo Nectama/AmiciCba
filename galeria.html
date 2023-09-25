@@ -19,6 +19,7 @@
 
 <body class="gallery-body">
 
+    <div id="menuOverlay"></div>
     <header id="header" class="header">
 
         <div>
@@ -26,17 +27,17 @@
                 <h1>Amici</h1>
             </a>
             <a href="javascript:void(0);" class="icon" onclick="hamburgerMenu()">
-                <img src="images/hamburger.png" alt="">
+                <img id="menu-icon" src="images/hamburger.png" alt="">
             </a>
         </div>
 
         <nav id="menuLinks">
             <div>
-                <a href="index.html">
-                    <h1>Amici</h1>
-                </a>
                 <a href="javascript:void(0);" class="icon" onclick="hamburgerMenu()">
                     <img src="images/cross.png" alt="">
+                </a>
+                <a href="javascript:void(0);" class="icon" onclick="hamburgerMenu()">
+                    <img id="menu-icon" src="images/hamburger.png" alt="">
                 </a>
             </div>
             <a href="index.html#servicios">SERVICIOS</a>
@@ -107,12 +108,16 @@
                 contenedorImags.className = "gallery-module";
 
                 var imgGrande = document.createElement("img");
-                imgGrande.setAttribute("src", `./images/Fotos/${i}.jpg`);
+                imgGrande.setAttribute("src", `./images/photos/${i}.webp`);
                 imgGrande.className = "big-image";
+                imgGrande.style.cursor = 'pointer';
 
                 // Add a click event listener to open the modal
                 imgGrande.addEventListener('click', function () {
-                    modal.style.display = 'block';
+                    modal.style.display = 'flex';
+                    modal.style.flexDirection = 'column';
+                    modal.style.justifyContent = 'center';
+                    modal.style.alignItems = 'center';
                     modalImage.src = this.src;
                 });
 
@@ -120,20 +125,28 @@
                 contenedorImagChicas.className = "small-images"
 
                 var imgChica1 = document.createElement("img");
-                imgChica1.setAttribute("src", `./images/Fotos/${i + 1}.jpg`);
+                imgChica1.setAttribute("src", `./images/photos/${i + 1}.webp`);
+                imgChica1.style.cursor = 'pointer';
 
                 // Add a click event listener to open the modal
                 imgChica1.addEventListener('click', function () {
-                    modal.style.display = 'block';
+                    modal.style.display = 'flex';
+                    modal.style.flexDirection = 'column';
+                    modal.style.justifyContent = 'center';
+                    modal.style.alignItems = 'center';
                     modalImage.src = this.src;
                 });
 
                 var imgChica2 = document.createElement("img");
-                imgChica2.setAttribute("src", `./images/Fotos/${i + 2}.jpg`);
+                imgChica2.setAttribute("src", `./images/photos/${i + 2}.webp`);
+                imgChica2.style.cursor = 'pointer';
 
                 // Add a click event listener to open the modal
                 imgChica2.addEventListener('click', function () {
-                    modal.style.display = 'block';
+                    modal.style.display = 'flex';
+                    modal.style.flexDirection = 'column';
+                    modal.style.justifyContent = 'center';
+                    modal.style.alignItems = 'center';
                     modalImage.src = this.src;
                 });
 
