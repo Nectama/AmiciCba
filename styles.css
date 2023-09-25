@@ -89,6 +89,17 @@ body {
 
 /* CSS for the header in different screens */
 
+#menuOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the alpha value for the desired darkness */
+    z-index: 14; /* Lower z-index than the menu to make it appear behind */
+    display: none; /* Initially hidden */
+}
+
 header {
     position: fixed;
     top: 0;
@@ -133,6 +144,10 @@ header .icon {
 
 #menuLinks div {
     display: none;
+}
+
+#menuLinks div a{
+    transform: rotate(90deg);
 }
 
 #menuLinks a {
@@ -203,10 +218,7 @@ header .icon {
     #menuLinks div {
         display: flex;
         padding: 0;
-    }
-
-    #menuLinks div h1 {
-        opacity: 0;
+        padding-top: 15px;
     }
 
     #menuLinks.show {
@@ -250,6 +262,11 @@ header .icon {
         height: 20px;
     }
 
+
+    #menuLinks div {
+        padding-top: 10px;
+    }
+
     #menuLinks.show {
         padding: 5px 30px 30px 30px;
     }
@@ -258,70 +275,49 @@ header .icon {
 /* CSS for the hero */
 
 .hero-container {
+    margin-top: 110px;
+    margin-bottom: 120px;
+    padding-top: 10px;
     position: relative;
-    margin-top: 240px;
-    margin-bottom: 125px;
+    background-color: white;
 }
 
 .hero {
     position: relative;
-    background: url(images/homepage-img.jpg);
-    background-size: cover;
-    background-position: 0% 30%;
-    height: 850px;
+    width: 100%;
+    margin: 0;
 }
-
-.overlap-logo {
-    width: 15%;
-    position: absolute;
-    top: -125px;
-    right: 6%;
-    z-index: 12;
-}
-
-.presentation {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    right: 10%;
-    height: 100%;
-    width: 30%;
-    background: rgba(255, 255, 255, 0.8);
-}
-
-.presentation-content {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-}
-
-.presentation p {
-    font-size: 35px;
-}
-
-.hello {
+.hero-img {
+    display: block;
     width: 100%;
 }
 
-.hello p {
-    font-family: 'Sacramento', cursive;
-    font-size: 100px;
+.button-align {
+    position: absolute;
+    width: 28.5%;
+    top: 0;
+    right: 9.5%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
 }
 
-.hello p:first-of-type {
-    text-align: left;
-    margin-left: 40px;
+.hero a {
+    background: #B35884;
+    height: 55px;
+    width: 240px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
+    font-size: 20px;
+    zoom: 1.3;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    margin-bottom: 10%;
 }
 
-.hello p:last-of-type {
-    margin-top: -75px;
-}
-
-.presentation a,
 .section-container a {
     background: #B35884;
     height: 55px;
@@ -345,41 +341,16 @@ header .icon {
 @media (max-width:1367px) {
 
     .hero-container {
-        margin-top: 200px;
+        margin-top: 100px;
     }
 
-    .hero {
-        margin-top: 90px;
-        background: url(images/homepage-img.jpg);
-        background-size: cover;
-        background-position: 0% 25%;
-        height: 650px;
-    }
-
-    .overlap-logo {
-        top: -90px;
-        right: 6%;
-    }
-
-    .presentation p {
-        font-size: 25px;
-    }
-
-    .hello p {
-        font-size: 70px;
-    }
-
-    .hello p:first-of-type {
-        margin-left: 20px;
-    }
-
-    .hello p:last-of-type {
-        margin-top: -50px;
-    }
-
-    .presentation a,
+    .hero a,
     .section-container a {
         zoom: 1;
+    }
+
+    .hero a {
+        margin-bottom: 10%;
     }
 
 }
@@ -387,46 +358,28 @@ header .icon {
 @media (max-width:1200px) {
 
     .hero-container {
-        margin-top: 180px;
+        margin-top: 80px;
         margin-bottom: 50px;
     }
 
-    .hero {
-        margin-top: 90px;
-        background-position: 0% 25%;
-        height: 500px;
-    }
-
-    .overlap-logo {
-        top: -75px;
-        right: 3%;
-    }
-
-    .presentation {
-        gap: 10px;
-        padding: 10px;
-        right: 5%;
-        width: 35%;
-    }
-
-    .presentation p {
-        font-size: 16px;
-    }
-
-    .hello p {
-        font-size: 50px;
-    }
-
-    .hello p:first-of-type {
-        margin-left: 20px;
-    }
-
-    .hello p:last-of-type {
-        margin-top: -35px;
-    }
-
-    .presentation a {
+    .hero a {
         zoom: 0.8;
+    }
+
+}
+
+@media (max-width:800px) {
+
+    .hero a {
+        margin-bottom: 15%;
+    }
+
+}
+
+@media (max-width:900px) {
+
+    .hero a {
+        zoom: 0.7;
     }
 
 }
@@ -434,49 +387,11 @@ header .icon {
 @media (max-width:650px) {
 
     .hero-container {
-        margin-top: 100px;
+        margin-top: 50px;
     }
-
-    .hero {
-        margin-top: 90px;
-        background-position: 0% 25%;
-        height: 250px;
-    }
-
-    .overlap-logo {
-        top: -38px;
-        right: 3%;
-    }
-
-    .presentation {
-        gap: 10px;
-        padding: 5px;
-        right: 5%;
-        width: 37%;
-    }
-
-    .presentation p {
-        font-size: 10px;
-    }
-
-    .hello p {
-        font-size: 30px;
-    }
-
-    .hello p:first-of-type {
-        margin-left: 0;
-    }
-
-    .hello p:last-of-type {
-        margin-top: -20px;
-    }
-
-    .presentation a {
-        zoom: 0.4;
-    }
-
-    .bigScreenOnly {
-        display: none;
+    
+    .hero a {
+        zoom: 0.5;
     }
 
 }
@@ -835,18 +750,18 @@ footer {
 }
 
 .gallery-container .section-header {
-    background-image: url(images/gallery-background.png);
-    background-position: center;
-    background-position: center;
-    /* Center the image */
-    background-repeat: no-repeat;
-    /* Do not repeat the image */
-    background-size: cover;
-    /* Resize the background image to cover the entire container */
-    height: 476px;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+}
+
+.gallery-container .section-header picture,
+.gallery-container .section-header picture img {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
 }
 
 .gallery-container h1 {
@@ -855,24 +770,7 @@ footer {
     color: #B35884;
     font-weight: 500;
     user-select: none;
-}
-
-@media (max-width:745px) {
-
-    .gallery-container .section-header {
-        background-image: url(images/gallery-background2.png);
-        height: 210px;
-    }
-
-}
-
-@media (max-width:500px) {
-
-    .gallery-container .section-header {
-        background-image: url(images/gallery-background3.png);
-        height: 93px;
-    }
-
+    position: absolute;
 }
 
 .gallery-container {
@@ -916,9 +814,28 @@ footer {
     object-fit: cover;
 }
 
+@media (max-width:745px) {
+
+    .gallery-container .section-header {
+        margin: 30px auto;
+    }
+
+    .gallery-container {
+        margin: 80px auto;
+    }
+
+}
+
+@media (max-width:500px) {
+
+    .gallery-container {
+        margin: 60px auto;
+    }
+}
+
+
 /*CSS for the modal images*/
 
-/* Add styles for the modal */
 .modal {
     display: none;
     position: fixed;
@@ -953,7 +870,6 @@ footer {
 @media (max-width:1150px) {
 
     .gallery-container h1 {
-        margin: 80px auto;
         font-size: 70px;
     }
 
@@ -981,8 +897,7 @@ footer {
 @media (max-width:650px) {
 
     .gallery-container h1 {
-        margin: 50px auto;
-        font-size: 40px;
+        font-size: 50px;
     }
 
     .big-image {

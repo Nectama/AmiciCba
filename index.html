@@ -18,7 +18,7 @@
 </head>
 
 <body>
-
+    <div id="menuOverlay"></div>
     <header id="header" class="header">
 
         <div>
@@ -26,17 +26,17 @@
                 <h1>Amici</h1>
             </a>
             <a href="javascript:void(0);" class="icon" onclick="hamburgerMenu()">
-                <img src="images/hamburger.png" alt="">
+                <img id="menu-icon" src="images/hamburger.png" alt="">
             </a>
         </div>
 
         <nav id="menuLinks">
             <div>
-                <a href="index.html">
-                    <h1>Amici</h1>
-                </a>
                 <a href="javascript:void(0);" class="icon" onclick="hamburgerMenu()">
                     <img src="images/cross.png" alt="">
+                </a>
+                <a href="javascript:void(0);" class="icon" onclick="hamburgerMenu()">
+                    <img id="menu-icon" src="images/hamburger.png" alt="">
                 </a>
             </div>
             <a href="index.html#servicios">SERVICIOS</a>
@@ -51,22 +51,20 @@
             alt="Chat on WhatsApp" src="images/whapp-color.png" /></a>
 
     <div class="hero-container">
+
         <div class="hero">
-            <img class="overlap-logo" src="images/logo-color.png" alt="">
-            <div class="presentation">
-                <div class="presentation-content">
-                    <div class="hello">
-                        <p>Hola!</p>
-                        <p>Soy Lucre</p>
-                    </div>
-                    <p>Asistente veterinaria<br>matriculada</p>
-                    <p>Educadora canina<br>certificada</p>
-                    <p>Estilista canino y felino<br>profesional (Todas las razas<br class="bigScreenOnly">y tipos de
-                        mantos)</p>
-                    <a href="nosotros.html">Conocé más</a>
-                </div>
+
+            <picture class="hero-img">
+                <source media="(min-width:1367px)" srcset="images/hero0.png">
+                <source media="(min-width:800px)" srcset="images/hero1.png">
+                <source media="(min-width:400px)" srcset="images/hero2.png">
+                <img class="hero-img" src="images/hero3.png" alt="">
+            </picture>
+            <div class="button-align">
+                <a class="hero-a" href="nosotros.html">Conocé más</a>
             </div>
         </div>
+
     </div>
 
     <div id="servicios" class="section-container">
@@ -108,19 +106,19 @@
                         alt=""></button>
                 <ul data-slides>
                     <li class="slide" data-active>
-                        <img src="images/gallery-preview1.jpg" alt="">
+                        <img src="images/gallery-preview1.webp" alt="">
                     </li>
                     <li class="slide">
-                        <img src="images/gallery-preview2.jpg" alt="">
+                        <img src="images/gallery-preview2.webp" alt="">
                     </li>
                     <li class="slide">
-                        <img src="images/gallery-preview3.jpg" alt="">
+                        <img src="images/gallery-preview3.webp" alt="">
                     </li>
                     <li class="slide">
-                        <img src="images/gallery-preview4.jpg" alt="">
+                        <img src="images/gallery-preview4.webp" alt="">
                     </li>
                     <li class="slide">
-                        <img src="images/gallery-preview5.jpg" alt="">
+                        <img src="images/gallery-preview5.webp" alt="">
                     </li>
                 </ul>
             </div>

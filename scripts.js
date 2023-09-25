@@ -2,13 +2,16 @@
 
 function hamburgerMenu() {
     const menuItems = document.getElementById("menuLinks");
+    const overlay = document.getElementById("menuOverlay");
+    
     menuItems.classList.toggle('show');
+    overlay.style.display = menuItems.classList.contains('show') ? 'block' : 'none';
 }
 
-// Close the menu when clicking outside
 document.addEventListener("click", function (event) {
     const menu = document.getElementById("menuLinks");
     const icon = document.querySelector(".icon");
+    const overlay = document.getElementById("menuOverlay");
 
     // Check if the clicked element is outside the menu and the icon
     if (
@@ -16,5 +19,6 @@ document.addEventListener("click", function (event) {
         !icon.contains(event.target)
     ) {
         menu.classList.remove('show');
+        overlay.style.display = 'none';
     }
 });
